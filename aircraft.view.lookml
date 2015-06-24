@@ -3,7 +3,7 @@
     - dimension: tail_number
       sql: ${TABLE}.tail_num 
       primary_key: true
-
+ 
     - dimension: plane_year
       type: int
       sql: aircraft.year_built+0    # defeat the JDBC automatic conversion to date because of the word 'year'
