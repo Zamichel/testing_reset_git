@@ -1,5 +1,7 @@
 
 - view: airports
+  sql_table_name: airports
+
   fields:
     - dimension: code                   # sql defaults to ${TABLE}.code  
       primary_key: true

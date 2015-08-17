@@ -55,3 +55,36 @@
   joins:
     - join: aircraft
       foreign_key: registration_number
+      
+- explore: route_picker
+  always_filter: 
+    code: 'ABE'
+  fields: [route_picker.1st_stop, route_picker.1st_carrier, route_picker.1st_distance, route_picker.1st_state_location,
+           route_picker.2nd_stop, route_picker.2nd_carrier, route_picker.2nd_distance, route_picker.2nd_state_location,
+           route_picker.3rd_stop, route_picker.3rd_carrier, route_picker.3rd_distance, route_picker.3rd_state_location,
+           route_picker.count_flights, route_picker.code]
+  joins:
+    - join: leg_1
+      from: flights_xref
+      relationship: one_to_many
+      sql_on: ${route_picker.code} = ${leg_1.origin}
+      fields: []
+      
+    - join: leg_2
+      from: flights_xref
+      relationship: one_to_many
+      sql_on: ${leg_1.destination} = ${leg_2.origin}
+      fields: []
+
+    - join: leg_3
+      from: flights_xref
+      relationship: one_to_many
+      sql_on: ${leg_2.destination} = ${leg_3.origin}
+      fields: []
+
+#     - join: leg_4
+#       from: flights_xref
+#       relationship: one_to_many
+#       sql_on: ${leg_3.destination} = ${leg_4.origin}
+#       fields: []
+#       
