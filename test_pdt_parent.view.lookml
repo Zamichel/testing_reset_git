@@ -8,7 +8,7 @@
       FROM orders
       GROUP BY user_id
     indexes: [user_id]
-    sql_trigger_value: SELECT 1
+    sql_trigger_value: SELECT MAX(user_id) FROM ${test_pdt_child.SQL_TABLE_NAME}
 
   fields:
   
