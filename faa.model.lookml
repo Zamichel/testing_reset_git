@@ -1,5 +1,5 @@
 - scoping: true
-- connection: the_look
+- connection: faa
 #- case_sensitive: false
 
 - include: "test_*.lookml"
