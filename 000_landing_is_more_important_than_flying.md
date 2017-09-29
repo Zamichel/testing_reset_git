@@ -123,6 +123,8 @@ Notice that each of the facility types are repeated for each state (that's what 
   measures: airports.count
 </look>
 
+
+
 You just learned a new skill! **Pivot** is a way to sort data to make viewing tables easier. You can pivot by any dimension in the query by clicking on the gear icon next to the field name (it appears when you hover) and selecting pivot or by clicking on "pivot" next to the field name in the field picker.
 
 
