@@ -8,7 +8,8 @@
       FROM ontime AS f
       GROUP BY tail_num
     sortkeys: [tail_num]
-    persist_for: 2000 hours
+    sql_trigger_value: select 1
+    publish_as_db_view: true
 
   fields:
     - dimension: tail_num
